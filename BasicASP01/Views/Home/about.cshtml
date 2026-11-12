@@ -1,16 +1,37 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
     ViewData["Title"] = "About";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="row justify-content-center py-4">
+    <div class="col-lg-8">
+        <div class="border-bottom pb-3 mb-4">
+            <h1 class="fw-bold text-dark mb-1">@ViewData["Title"]</h1>
+            <p class="text-muted mb-0">เกี่ยวกับเราและข้อมูลระบบ</p>
+        </div>
 
-<p>เกี่ยวกับเรา</p>
-<ul>
-    <li>ชื่อ: WebApp69</li>
-    <li>เวอร์ชัน: 1.0.0</li>
-    <li>ผู้พัฒนา: ทีมพัฒนา WebApp69</li>
-    <li>ลิขสิทธิ์: 2024 WebApp69. สงวนลิขสิทธิ์.</li>
-</ul>
+        <p class="text-secondary mb-4">
+            <strong>WebApp69</strong> เป็นเว็บแอพพลิเคชันสำหรับจัดการข้อมูลและแสดงรายการสินค้า พัฒนาขึ้นด้วยเทคโนโลยี ASP.NET Core MVC เพื่อความรวดเร็วและใช้งานง่าย
+        </p>
+
+        <table class="table table-bordered align-middle">
+            <tbody>
+                <tr>
+                    <th class="bg-light text-dark w-25 ps-3">ชื่อ</th>
+                    <td class="ps-3">WebApp69</td>
+                </tr>
+                <tr>
+                    <th class="bg-light text-dark ps-3">เวอร์ชัน</th>
+                    <td class="ps-3">1.0.0</td>
+                </tr>
+                <tr>
+                    <th class="bg-light text-dark ps-3">ผู้พัฒนา</th>
+                    <td class="ps-3">ทีมพัฒนา WebApp69</td>
+                </tr>
+                <tr>
+                    <th class="bg-light text-dark ps-3">ลิขสิทธิ์</th>
+                    <td class="ps-3">2024 WebApp69. สงวนลิขสิทธิ์.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<BasicASP01.Models.Product>
+@{
+    ViewData["Title"] = "Product";
+}
+<div class="text-center"> 
+    <h1 class="display-4">Product</h1>
+    <p>This is the product details page.</p>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- ส่วนแสดงผลปุ่ม Pagination -->
+<nav aria-label="Page navigation" class="mt-4">
+    <ul class="pagination justify-content-center gap-2">
+
+        <!-- ปุ่ม Previous -->
+        <li class="page-item @(ViewBag.CurrentPage <= 1 ? "disabled" : "")">
+            <a class="page-link rounded-pill px-4 border-0 shadow-sm fw-medium"
+               href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1 })">
+                &laquo; Previous
+            </a>
+        </li>
+
+        <!-- ปุ่มตัวเลขหน้า -->
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                <a class="page-link rounded-pill px-3 border-0 shadow-sm fw-semibold"
+                   href="@Url.Action("Index", new { page = i })">
+                    @i
+                </a>
+            </li>
+        }
+
+        <!-- ปุ่ม Next -->
+        <li class="page-item @(ViewBag.CurrentPage >= ViewBag.TotalPages ? "disabled" : "")">
+            <a class="page-link rounded-pill px-4 border-0 shadow-sm fw-medium"
+               href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1 })">
+                Next &raquo;
+            </a>
+        </li>
+
+    </ul>
+</nav>
