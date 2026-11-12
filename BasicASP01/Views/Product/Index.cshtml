@@ -35,7 +35,7 @@
 <nav aria-label="Page navigation" class="mt-4">
     <ul class="pagination justify-content-center gap-2">
 
-        <!-- ปุ่ม Previous -->
+ 
         <li class="page-item @(ViewBag.CurrentPage <= 1 ? "disabled" : "")">
             <a class="page-link rounded-pill px-4 border-0 shadow-sm fw-medium"
                href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1 })">
@@ -43,7 +43,7 @@
             </a>
         </li>
 
-        <!-- ปุ่มตัวเลขหน้า -->
+  
         @for (int i = 1; i <= ViewBag.TotalPages; i++)
         {
             <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
@@ -54,7 +54,7 @@
             </li>
         }
 
-        <!-- ปุ่ม Next -->
+     
         <li class="page-item @(ViewBag.CurrentPage >= ViewBag.TotalPages ? "disabled" : "")">
             <a class="page-link rounded-pill px-4 border-0 shadow-sm fw-medium"
                href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1 })">
